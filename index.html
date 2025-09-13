@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Springfield Dashboard - The Simpsons</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One:wght@400&family=Fredoka:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Parallax Cloud Background -->
+    <div class="parallax-container">
+        <div class="cloud-layer cloud-layer-1">
+            <div class="cloud cloud-1"></div>
+            <div class="cloud cloud-2"></div>
+            <div class="cloud cloud-3"></div>
+        </div>
+        <div class="cloud-layer cloud-layer-2">
+            <div class="cloud cloud-4"></div>
+            <div class="cloud cloud-5"></div>
+            <div class="cloud cloud-6"></div>
+        </div>
+        <div class="cloud-layer cloud-layer-3">
+            <div class="cloud cloud-7"></div>
+            <div class="cloud cloud-8"></div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+            <div class="nav-container">
+                <!-- Springfield Logo -->
+                <div class="logo-section">
+                    <div class="springfield-logo">
+                        <span class="logo-text">SPRINGFIELD</span>
+                        <span class="logo-subtitle">Town Dashboard</span>
+                    </div>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-section">
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Search this town...">
+                        <button class="search-button">🔍</button>
+                    </div>
+                </div>
+
+                <!-- Filter Chips -->
+                <div class="filter-section">
+                    <div class="filter-chips">
+                        <button class="filter-chip active" data-filter="episodes">Episodes</button>
+                        <button class="filter-chip" data-filter="characters">Characters</button>
+                        <button class="filter-chip" data-filter="locations">Locations</button>
+                        <button class="filter-chip" data-filter="lore">Lore</button>
+                        <button class="filter-chip" data-filter="games">Games</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <div class="content-container">
+                <!-- Welcome Section -->
+                <section class="welcome-section">
+                    <h1 class="welcome-title">Welcome to Springfield!</h1>
+                    <p class="welcome-text">Explore the wonderful world of The Simpsons through our comprehensive dashboard</p>
+                </section>
+
+                <!-- Dashboard Grid -->
+                <section class="dashboard-grid">
+                    <!-- Episodes Card -->
+                    <div class="dashboard-card episodes-card" data-category="episodes">
+                        <div class="card-header">
+                            <h3>📺 Episodes</h3>
+                            <span class="card-count">750+</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Dive into decades of Simpson family adventures</p>
+                        </div>
+                    </div>
+
+                    <!-- Characters Card -->
+                    <div class="dashboard-card characters-card" data-category="characters">
+                        <div class="card-header">
+                            <h3>👥 Characters</h3>
+                            <span class="card-count">500+</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Meet the colorful residents of Springfield</p>
+                        </div>
+                    </div>
+
+                    <!-- Locations Card -->
+                    <div class="dashboard-card locations-card" data-category="locations">
+                        <div class="card-header">
+                            <h3>🏢 Locations</h3>
+                            <span class="card-count">200+</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Explore iconic Springfield landmarks</p>
+                        </div>
+                    </div>
+
+                    <!-- Lore Card -->
+                    <div class="dashboard-card lore-card" data-category="lore">
+                        <div class="card-header">
+                            <h3>📖 Lore</h3>
+                            <span class="card-count">∞</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Discover hidden stories and Easter eggs</p>
+                        </div>
+                    </div>
+
+                    <!-- Games Card -->
+                    <div class="dashboard-card games-card" data-category="games">
+                        <div class="card-header">
+                            <h3>🎮 Games</h3>
+                            <span class="card-count">25+</span>
+                        </div>
+                        <div class="card-content">
+                            <p>Play Simpsons-themed mini-games</p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Stats Card -->
+                    <div class="dashboard-card stats-card">
+                        <div class="card-header">
+                            <h3>📊 Quick Stats</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="stat-item">
+                                <span class="stat-label">Years Running:</span>
+                                <span class="stat-value">34+</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Awards Won:</span>
+                                <span class="stat-value">100+</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Countries Aired:</span>
+                                <span class="stat-value">190+</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

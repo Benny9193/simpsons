@@ -1,0 +1,658 @@
+/* Springfield Simpsons Dashboard Styles */
+
+/* CSS Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    background: linear-gradient(135deg, #87CEEB 0%, #98E4FF 50%, #87CEEB 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Parallax Cloud Styles */
+.parallax-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.cloud-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.cloud {
+    position: absolute;
+    background: #FFFFFF;
+    border-radius: 50px;
+    opacity: 0.8;
+    animation: float-cloud linear infinite;
+}
+
+.cloud::before,
+.cloud::after {
+    content: '';
+    position: absolute;
+    background: #FFFFFF;
+    border-radius: 50px;
+}
+
+/* Cloud Shapes */
+.cloud-1 {
+    width: 100px;
+    height: 40px;
+    top: 10%;
+    left: -120px;
+    animation-duration: 20s;
+}
+
+.cloud-1::before {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+    left: 10px;
+}
+
+.cloud-1::after {
+    width: 60px;
+    height: 40px;
+    top: -15px;
+    right: 10px;
+}
+
+.cloud-2 {
+    width: 80px;
+    height: 30px;
+    top: 20%;
+    left: -100px;
+    animation-duration: 25s;
+}
+
+.cloud-2::before {
+    width: 40px;
+    height: 40px;
+    top: -20px;
+    left: 15px;
+}
+
+.cloud-2::after {
+    width: 50px;
+    height: 30px;
+    top: -10px;
+    right: 15px;
+}
+
+.cloud-3 {
+    width: 120px;
+    height: 50px;
+    top: 5%;
+    left: -150px;
+    animation-duration: 30s;
+}
+
+.cloud-3::before {
+    width: 60px;
+    height: 60px;
+    top: -30px;
+    left: 20px;
+}
+
+.cloud-3::after {
+    width: 70px;
+    height: 50px;
+    top: -20px;
+    right: 20px;
+}
+
+.cloud-layer-2 .cloud {
+    opacity: 0.6;
+}
+
+.cloud-4 {
+    width: 90px;
+    height: 35px;
+    top: 30%;
+    left: -110px;
+    animation-duration: 35s;
+}
+
+.cloud-4::before {
+    width: 45px;
+    height: 45px;
+    top: -22px;
+    left: 12px;
+}
+
+.cloud-4::after {
+    width: 55px;
+    height: 35px;
+    top: -12px;
+    right: 12px;
+}
+
+.cloud-5 {
+    width: 110px;
+    height: 45px;
+    top: 15%;
+    left: -130px;
+    animation-duration: 28s;
+}
+
+.cloud-5::before {
+    width: 55px;
+    height: 55px;
+    top: -27px;
+    left: 18px;
+}
+
+.cloud-5::after {
+    width: 65px;
+    height: 45px;
+    top: -17px;
+    right: 18px;
+}
+
+.cloud-6 {
+    width: 70px;
+    height: 25px;
+    top: 25%;
+    left: -90px;
+    animation-duration: 22s;
+}
+
+.cloud-6::before {
+    width: 35px;
+    height: 35px;
+    top: -17px;
+    left: 10px;
+}
+
+.cloud-6::after {
+    width: 45px;
+    height: 25px;
+    top: -7px;
+    right: 10px;
+}
+
+.cloud-layer-3 .cloud {
+    opacity: 0.4;
+}
+
+.cloud-7 {
+    width: 130px;
+    height: 55px;
+    top: 8%;
+    left: -160px;
+    animation-duration: 40s;
+}
+
+.cloud-7::before {
+    width: 65px;
+    height: 65px;
+    top: -32px;
+    left: 22px;
+}
+
+.cloud-7::after {
+    width: 75px;
+    height: 55px;
+    top: -22px;
+    right: 22px;
+}
+
+.cloud-8 {
+    width: 85px;
+    height: 30px;
+    top: 35%;
+    left: -105px;
+    animation-duration: 33s;
+}
+
+.cloud-8::before {
+    width: 42px;
+    height: 42px;
+    top: -21px;
+    left: 14px;
+}
+
+.cloud-8::after {
+    width: 52px;
+    height: 30px;
+    top: -11px;
+    right: 14px;
+}
+
+@keyframes float-cloud {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(calc(100vw + 200px));
+    }
+}
+
+/* Main Container */
+.main-container {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+}
+
+/* Top Navigation */
+.top-nav {
+    background: linear-gradient(145deg, #FFD700, #FFA500);
+    border: 4px solid #333;
+    border-radius: 0 0 25px 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    max-width: 1400px;
+    margin: 0 auto;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Springfield Logo */
+.logo-section {
+    flex-shrink: 0;
+}
+
+.springfield-logo {
+    text-align: center;
+}
+
+.logo-text {
+    display: block;
+    font-family: 'Fredoka One', cursive;
+    font-size: 28px;
+    color: #333;
+    text-shadow: 3px 3px 0 #FFF, -1px -1px 0 #333, 1px -1px 0 #333, -1px 1px 0 #333, 1px 1px 0 #333;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
+.logo-subtitle {
+    display: block;
+    font-size: 12px;
+    color: #333;
+    font-weight: 600;
+    margin-top: 2px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Search Section */
+.search-section {
+    flex: 1;
+    max-width: 400px;
+    min-width: 250px;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-input {
+    width: 100%;
+    padding: 12px 50px 12px 15px;
+    border: 4px solid #333;
+    border-radius: 25px;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    background: #FFF;
+    color: #333;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    border-color: #FF6B35;
+    box-shadow: 0 0 15px rgba(255, 107, 53, 0.5);
+    transform: scale(1.02);
+}
+
+.search-input::placeholder {
+    color: #666;
+    font-style: italic;
+}
+
+.search-button {
+    position: absolute;
+    right: 5px;
+    background: #FF6B35;
+    border: 3px solid #333;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.search-button:hover {
+    background: #FF8C69;
+    transform: scale(1.1);
+}
+
+/* Filter Section */
+.filter-section {
+    flex-shrink: 0;
+}
+
+.filter-chips {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-chip {
+    padding: 8px 16px;
+    border: 3px solid #333;
+    border-radius: 20px;
+    background: #FFF;
+    color: #333;
+    font-family: 'Fredoka', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-chip:hover {
+    background: #87CEEB;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.filter-chip.active {
+    background: #FF6B35;
+    color: #FFF;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(255, 107, 53, 0.4);
+}
+
+/* Main Content */
+.main-content {
+    padding: 40px 30px;
+}
+
+.content-container {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Welcome Section */
+.welcome-section {
+    text-align: center;
+    margin-bottom: 50px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 4px solid #333;
+    border-radius: 25px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.welcome-title {
+    font-family: 'Fredoka One', cursive;
+    font-size: 48px;
+    color: #FF6B35;
+    text-shadow: 4px 4px 0 #333, -2px -2px 0 #FFF;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.welcome-text {
+    font-size: 20px;
+    color: #333;
+    font-weight: 500;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    background: rgba(255, 255, 255, 0.95);
+    border: 4px solid #333;
+    border-radius: 20px;
+    padding: 25px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+.dashboard-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.5s ease;
+}
+
+.dashboard-card:hover::before {
+    left: 100%;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-header h3 {
+    font-family: 'Fredoka One', cursive;
+    font-size: 24px;
+    color: #333;
+    text-shadow: 2px 2px 0 #FFF;
+}
+
+.card-count {
+    background: #FFD700;
+    border: 2px solid #333;
+    border-radius: 15px;
+    padding: 5px 12px;
+    font-weight: 700;
+    color: #333;
+    font-size: 16px;
+}
+
+.card-content p {
+    font-size: 16px;
+    color: #555;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* Specific Card Colors */
+.episodes-card {
+    border-left: 8px solid #FF6B35;
+}
+
+.episodes-card:hover {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1), rgba(255, 255, 255, 0.95));
+}
+
+.characters-card {
+    border-left: 8px solid #32CD32;
+}
+
+.characters-card:hover {
+    background: linear-gradient(135deg, rgba(50, 205, 50, 0.1), rgba(255, 255, 255, 0.95));
+}
+
+.locations-card {
+    border-left: 8px solid #87CEEB;
+}
+
+.locations-card:hover {
+    background: linear-gradient(135deg, rgba(135, 206, 235, 0.1), rgba(255, 255, 255, 0.95));
+}
+
+.lore-card {
+    border-left: 8px solid #DA70D6;
+}
+
+.lore-card:hover {
+    background: linear-gradient(135deg, rgba(218, 112, 214, 0.1), rgba(255, 255, 255, 0.95));
+}
+
+.games-card {
+    border-left: 8px solid #FFD700;
+}
+
+.games-card:hover {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 255, 255, 0.95));
+}
+
+.stats-card {
+    border-left: 8px solid #FF69B4;
+}
+
+.stats-card:hover {
+    background: linear-gradient(135deg, rgba(255, 105, 180, 0.1), rgba(255, 255, 255, 0.95));
+}
+
+/* Stats Card Specific Styles */
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 2px solid #EEE;
+}
+
+.stat-item:last-child {
+    border-bottom: none;
+}
+
+.stat-label {
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+
+.stat-value {
+    font-weight: 700;
+    color: #FF6B35;
+    font-size: 16px;
+    background: #FFD700;
+    border: 2px solid #333;
+    border-radius: 10px;
+    padding: 2px 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .logo-text {
+        font-size: 24px;
+    }
+
+    .filter-chips {
+        justify-content: center;
+    }
+
+    .welcome-title {
+        font-size: 36px;
+    }
+
+    .welcome-text {
+        font-size: 18px;
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .main-content {
+        padding: 20px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo-text {
+        font-size: 20px;
+    }
+
+    .search-input {
+        font-size: 14px;
+        padding: 10px 45px 10px 12px;
+    }
+
+    .filter-chip {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .welcome-title {
+        font-size: 28px;
+    }
+
+    .welcome-text {
+        font-size: 16px;
+    }
+
+    .welcome-section {
+        padding: 25px 20px;
+    }
+
+    .dashboard-card {
+        padding: 20px;
+    }
+
+    .card-header h3 {
+        font-size: 20px;
+    }
+}
