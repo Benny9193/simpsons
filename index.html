@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Springfield Control Center - Town Dashboard</title>
+    <meta name="description" content="Your ultimate Springfield town dashboard - explore locations, characters, and episodes from everyone's favorite animated family">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Animated Background Clouds -->
+    <div class="clouds" aria-hidden="true">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+    </div>
+
+    <!-- Top Navigation -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <div class="springfield-seal" aria-label="Springfield town seal">
+                    <div class="seal-inner">
+                        <span class="seal-text">SPRINGFIELD</span>
+                        <span class="seal-subtitle">Est. 1796</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="search-container">
+                <input type="search" id="town-search" placeholder="Search this town..." aria-label="Search Springfield content" autocomplete="off">
+                <button type="button" class="search-btn" aria-label="Search">🔍</button>
+            </div>
+
+            <div class="filter-chips" role="group" aria-label="Content filters">
+                <button class="chip active" data-filter="all">All</button>
+                <button class="chip" data-filter="episodes">Episodes</button>
+                <button class="chip" data-filter="characters">Characters</button>
+                <button class="chip" data-filter="locations">Locations</button>
+                <button class="chip" data-filter="lore">Lore</button>
+                <button class="chip" data-filter="games">Games</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="breadcrumb-nav" role="navigation" aria-label="Page navigation">
+        <div class="breadcrumb-container">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#" class="breadcrumb-link">🏛️ Springfield</a>
+                </li>
+                <li class="breadcrumb-item active">
+                    <span class="breadcrumb-current">📊 Control Center</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Status Bar -->
+    <div class="status-bar" role="banner" aria-label="Town status panel">
+        <div class="status-container">
+            <div class="status-item">
+                <span class="status-label">Nuclear Status:</span>
+                <span class="status-value safe">SAFE</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">New Content:</span>
+                <span class="status-value">4 items</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Featured Event:</span>
+                <span class="status-value">Oktoberfest at Moe's</span>
+            </div>
+            <div class="status-item">
+                <span class="status-label">Town Population:</span>
+                <span class="status-value">30,720</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section" role="banner" aria-label="Springfield Welcome Section">
+        <div class="hero-container">
+            <!-- Springfield Skyline -->
+            <div class="skyline-container" aria-hidden="true">
+                <div class="skyline">
+                    <div class="building building-1"></div>
+                    <div class="building building-2"></div>
+                    <div class="building building-3"></div>
+                    <div class="nuclear-tower">
+                        <div class="tower-base"></div>
+                        <div class="cooling-tower"></div>
+                        <div class="smoke-stack"></div>
+                    </div>
+                    <div class="building building-4"></div>
+                    <div class="building building-5"></div>
+                </div>
+                <div class="skyline-glow"></div>
+            </div>
+
+            <!-- Hero Content -->
+            <div class="hero-content">
+                <h1 class="hero-title">Welcome to Springfield!</h1>
+                <p class="hero-subtitle">Your one-stop control center for all things Springfield</p>
+
+                <!-- Rotating Quotes -->
+                <div class="quote-carousel" role="region" aria-label="Springfield character quotes">
+                    <div class="quote active" data-character="homer">
+                        <span class="quote-text">"D'oh! This town has everything!"</span>
+                        <span class="quote-author">- Homer Simpson</span>
+                    </div>
+                    <div class="quote" data-character="marge">
+                        <span class="quote-text">"Springfield is a wonderful place to raise a family."</span>
+                        <span class="quote-author">- Marge Simpson</span>
+                    </div>
+                    <div class="quote" data-character="bart">
+                        <span class="quote-text">"Don't have a cow, man! This town rocks!"</span>
+                        <span class="quote-author">- Bart Simpson</span>
+                    </div>
+                    <div class="quote" data-character="lisa">
+                        <span class="quote-text">"Springfield's rich history fascinates me."</span>
+                        <span class="quote-author">- Lisa Simpson</span>
+                    </div>
+                    <div class="quote" data-character="burns">
+                        <span class="quote-text">"Excellent... my town, my rules."</span>
+                        <span class="quote-author">- Mr. Burns</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weather Widget -->
+            <div class="weather-widget" role="complementary" aria-label="Springfield weather conditions">
+                <div class="weather-header">
+                    <h3>Springfield Weather</h3>
+                    <div class="weather-icon">☢️</div>
+                </div>
+                <div class="weather-info">
+                    <div class="temperature">
+                        <span class="temp-value">72°F</span>
+                        <span class="temp-label">Nuclear Winter</span>
+                    </div>
+                    <div class="weather-details">
+                        <div class="weather-item">
+                            <span class="weather-label">Radiation:</span>
+                            <span class="weather-value safe">Minimal</span>
+                        </div>
+                        <div class="weather-item">
+                            <span class="weather-label">Smog Level:</span>
+                            <span class="weather-value moderate">Moderate</span>
+                        </div>
+                        <div class="weather-item">
+                            <span class="weather-label">Donut Outlook:</span>
+                            <span class="weather-value excellent">Excellent</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Dashboard -->
+    <main class="dashboard" role="main">
+        <div class="dashboard-container">
+            <!-- Dashboard content now starts after hero -->
+
+            <!-- Category Filter Bar -->
+            <div class="category-bar" role="region" aria-label="Location categories">
+                <h2 class="category-title">Explore Springfield by District</h2>
+                <div class="category-filters">
+                    <button class="category-btn active" data-category="all">All Districts</button>
+                    <button class="category-btn" data-category="residential">🏠 Residential</button>
+                    <button class="category-btn" data-category="commercial">🏪 Commercial</button>
+                    <button class="category-btn" data-category="municipal">🏛️ Municipal</button>
+                    <button class="category-btn" data-category="entertainment">🎪 Entertainment</button>
+                </div>
+            </div>
+
+            <!-- Featured Location -->
+            <div class="featured-section" role="region" aria-label="Featured location of the day">
+                <h2 class="featured-title">🌟 Featured Location of the Day</h2>
+                <article class="featured-card" data-location="simpsons-house" tabindex="0" role="gridcell">
+                    <div class="featured-content">
+                        <div class="featured-header">
+                            <div class="featured-icon">🏠</div>
+                            <div class="featured-text">
+                                <h3>742 Evergreen Terrace</h3>
+                                <p>The heart of Springfield - where America's favorite family lives</p>
+                            </div>
+                        </div>
+                        <div class="featured-stats">
+                            <div class="featured-stat">
+                                <span class="stat-number">∞</span>
+                                <span class="stat-label">Donuts Consumed</span>
+                            </div>
+                            <div class="featured-stat">
+                                <span class="stat-number">684</span>
+                                <span class="stat-label">Couch Gags</span>
+                            </div>
+                            <div class="featured-stat">
+                                <span class="stat-number">35+</span>
+                                <span class="stat-label">Years on TV</span>
+                            </div>
+                        </div>
+                        <div class="featured-quote">
+                            "D'oh! Where's the remote?"
+                        </div>
+                    </div>
+                    <div class="featured-badge">FEATURED</div>
+                </article>
+            </div>
+
+            <!-- Mini Map and Quick Actions -->
+            <div class="navigation-controls" role="region" aria-label="Navigation and quick actions">
+                <!-- Mini Map -->
+                <div class="mini-map-container">
+                    <h3 class="mini-map-title">🗺️ Springfield Map</h3>
+                    <div class="mini-map" role="img" aria-label="Springfield district map">
+                        <div class="map-district" data-category="residential" title="Residential District">
+                            <div class="map-building residential-building"></div>
+                            <div class="map-building residential-building"></div>
+                            <span class="district-label">🏠</span>
+                        </div>
+                        <div class="map-district" data-category="commercial" title="Commercial District">
+                            <div class="map-building commercial-building"></div>
+                            <div class="map-building commercial-building"></div>
+                            <span class="district-label">🏪</span>
+                        </div>
+                        <div class="map-district" data-category="municipal" title="Municipal District">
+                            <div class="map-building municipal-building"></div>
+                            <div class="map-nuclear nuclear-indicator"></div>
+                            <span class="district-label">🏛️</span>
+                        </div>
+                        <div class="map-district" data-category="entertainment" title="Entertainment District">
+                            <div class="map-building entertainment-building"></div>
+                            <span class="district-label">🎪</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions Bar -->
+                <div class="quick-actions">
+                    <h3 class="quick-actions-title">⚡ Quick Actions</h3>
+                    <div class="action-buttons">
+                        <button class="action-btn" id="random-location-btn" title="Visit random location">
+                            <span class="action-icon">🎲</span>
+                            <span class="action-label">Random</span>
+                        </button>
+                        <button class="action-btn" id="favorites-btn" title="View favorites">
+                            <span class="action-icon">⭐</span>
+                            <span class="action-label">Favorites</span>
+                        </button>
+                        <button class="action-btn" id="stats-btn" title="View town statistics">
+                            <span class="action-icon">📊</span>
+                            <span class="action-label">Stats</span>
+                        </button>
+                        <button class="action-btn" id="theme-toggle" title="Change theme">
+                            <span class="action-icon">🎨</span>
+                            <span class="action-label">Theme</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dashboard Grid (Masonry Layout) -->
+            <div class="dashboard-grid masonry-grid" role="grid" aria-label="Springfield locations dashboard">
+
+                <!-- Simpsons House -->
+                <article class="location-card" data-location="simpsons-house" data-category="residential" tabindex="0" role="gridcell">
+                    <div class="card-header">
+                        <div class="location-icon house-icon">🏠</div>
+                        <h2>742 Evergreen Terrace</h2>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-description">Home sweet home of America's favorite family</p>
+                        <div class="card-stats">
+                            <span class="stat">🍩 Donuts consumed: ∞</span>
+                            <span class="stat">📺 Couch gags: 684</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="gag-line">"D'oh! Where's the remote?"</span>
+                    </div>
+                    <div class="speech-bubble" aria-hidden="true">
+                        Click to explore the Simpson family home!
+                    </div>
+                </article>
+
+                <!-- Springfield Elementary -->
+                <article class="location-card" data-location="elementary" data-category="municipal" tabindex="0" role="gridcell">
+                    <div class="card-header">
+                        <div class="location-icon school-icon">🏫</div>
+                        <h2>Springfield Elementary</h2>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-description">Where learning happens... sometimes</p>
+                        <div class="card-stats">
+                            <span class="stat">📚 Test scores: Below average</span>
+                            <span class="stat">🍎 Lunch quality: Questionable</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="gag-line">"Skinner! You're fired!" - Chalmers</span>
+                    </div>
+                    <div class="speech-bubble" aria-hidden="true">
+                        Explore the halls of Springfield's finest education!
+                    </div>
+                </article>
+
+                <!-- Nuclear Power Plant -->
+                <article class="location-card" data-location="power-plant" data-category="municipal" tabindex="0" role="gridcell">
+                    <div class="card-header">
+                        <div class="location-icon nuclear-icon">⚛️</div>
+                        <h2>Springfield Nuclear Plant</h2>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-description">Powering Springfield since... well, recently</p>
+                        <div class="card-stats">
+                            <span class="stat">☢️ Safety rating: C-</span>
+                            <span class="stat">⚡ Power output: Adequate</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="gag-line">"Excellent..." - Mr. Burns</span>
+                    </div>
+                    <div class="speech-bubble" aria-hidden="true">
+                        Tour the workplace of Homer Simpson!
+                    </div>
+                </article>
+
+                <!-- Channel 6 News -->
+                <article class="location-card" data-location="channel-6" data-category="commercial" tabindex="0" role="gridcell">
+                    <div class="card-header">
+                        <div class="location-icon tv-icon">📺</div>
+                        <h2>Channel 6 News</h2>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-description">Springfield's most trusted news source</p>
+                        <div class="card-stats">
+                            <span class="stat">📰 Accuracy: 67%</span>
+                            <span class="stat">🎬 Kent Brockman reports: Daily</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="gag-line">"I, for one, welcome our new ant overlords"</span>
+                    </div>
+                    <div class="speech-bubble" aria-hidden="true">
+                        Get the latest Springfield news and gossip!
+                    </div>
+                </article>
+
+                <!-- Moe's Tavern -->
+                <article class="location-card" data-location="moes-tavern" data-category="entertainment" tabindex="0" role="gridcell">
+                    <div class="card-header">
+                        <div class="location-icon tavern-icon">🍺</div>
+                        <h2>Moe's Tavern</h2>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-description">Where everybody knows your shame</p>
+                        <div class="card-stats">
+                            <span class="stat">🍺 Duff on tap: Always</span>
+                            <span class="stat">📞 Prank calls: 847</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="gag-line">"Moe's Tavern, Moe speaking"</span>
+                    </div>
+                    <div class="speech-bubble" aria-hidden="true">
+                        Grab a cold one with the regulars!
+                    </div>
+                </article>
+
+                <!-- Kwik-E-Mart -->
+                <article class="location-card" data-location="kwik-e-mart" data-category="commercial" tabindex="0" role="gridcell">
+                    <div class="card-header">
+                        <div class="location-icon mart-icon">🏪</div>
+                        <h2>Kwik-E-Mart</h2>
+                    </div>
+                    <div class="card-content">
+                        <p class="card-description">Your one-stop shop for everything expired</p>
+                        <div class="card-stats">
+                            <span class="stat">🌭 Hot dogs: Rotating since '87</span>
+                            <span class="stat">🎰 Squishee flavors: 47</span>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <span class="gag-line">"Thank you, come again!" - Apu</span>
+                    </div>
+                    <div class="speech-bubble" aria-hidden="true">
+                        Stock up on Springfield essentials!
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Easter Egg Elements -->
+    <div class="easter-eggs" aria-hidden="true">
+        <button id="donut-button" class="donut-btn" aria-label="Secret donut button" title="Press for sprinkles!">🍩</button>
+        <div id="confetti-container"></div>
+        <audio id="doh-sound" preload="none">
+            <source src="data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhCj2X2e/AbiMFl" type="audio/wav">
+        </audio>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Legal Disclaimer</h3>
+                <p>This is a parody website created for educational purposes. Not affiliated with Fox or The Simpsons™. No nuclear accidents were caused during the making of this site.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Accessibility</h3>
+                <p>This site supports keyboard navigation, screen readers, and high contrast mode. Press '?' for keyboard shortcuts.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hidden Credits</h3>
+                <p>Map Legend: 🏠=Home 🏫=School ⚛️=Work 📺=News 🍺=Bar 🏪=Store</p>
+                <p>Gag Credits: Inspired by 700+ episodes of pure comedy gold</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Springfield Control Center | Made with ❤️ and 🍩 | Press 'D' for D'oh!</p>
+        </div>
+    </footer>
+
+    <!-- Help Modal -->
+    <div id="help-modal" class="modal" role="dialog" aria-labelledby="help-title" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="help-title">Springfield Keyboard Shortcuts</h2>
+                <button class="modal-close" aria-label="Close help">&times;</button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li><kbd>/</kbd> - Focus search bar</li>
+                    <li><kbd>1-6</kbd> - Jump to location cards</li>
+                    <li><kbd>D</kbd> - Play D'oh! sound</li>
+                    <li><kbd>?</kbd> - Show this help</li>
+                    <li><kbd>Esc</kbd> - Close modals</li>
+                    <li><kbd>Tab</kbd> - Navigate through elements</li>
+                    <li>Konami Code - Secret season 1 theme!</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
